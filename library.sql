@@ -18,6 +18,7 @@ create table Department(
     total_books int ,
     shelf_no int 
 );
+
  create table Vendors(
     vendor_id  char(5) primary key,
     vender_name varchar(20),
@@ -27,13 +28,15 @@ create table Department(
     address text,
     type enum('books','journals'),
     amount float
-);   
+); 
+
 create table category(
     category_id int primary key,
     category_name varchar(20),
     course varchar(20)
     branch varchar(30),
 );
+
 create table Books(
     Book_id int primary key,
     Book_title varchar(30),
@@ -42,6 +45,7 @@ create table Books(
     subject_id int ,
     foreign key(subject_id) references Department(subject_id)
 );
+
 create table Members(
     Member_id varchar(10) primary key,
     Member_name varchar(20),
@@ -52,6 +56,7 @@ create table Members(
     expiry_data date
     foreign key(category_id) references category(category_id)
 );
+
 create table Issue(
         issue_id int(5) primary key,
 	Member_id varchar(10),
@@ -81,7 +86,6 @@ create table EBooks(
     format text,
     foreign key(subject_id) references Department(subject_id)
 );
-
 
 create table staff
 (
