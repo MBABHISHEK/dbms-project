@@ -16,7 +16,7 @@ create table Books(
     Book_author varchar(10),
     Book_edition int,
     subject_id int ,
-    foreign key(subject_id) references Dpartment(subject_id));
+    foreign key(subject_id) references Department(subject_id));
     
 create table Department(
     subject_id int primary key,
