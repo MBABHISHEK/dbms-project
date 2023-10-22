@@ -4,21 +4,22 @@ use LIBRARY_DATABASE;
 create table Login(
    sl_no int primary key,
    name varchar(10),
-   entery_time time,
+   entry_time time,
    exit_time time,
     t_date date,
-    Department_name varchar(10) unique);
+    Department_name varchar(10) 	
+);
     
 create table Books(
-	Book_id int primary key,
+    Book_id int primary key,
     Book_title varchar(10),
     Book_author varchar(10),
     Book_edition int,
     subject_id int ,
-	foreign key(subject_id) references Dpartment(subject_id));
+    foreign key(subject_id) references Dpartment(subject_id));
     
 create table Department(
-	subject_id int primary key,
+    subject_id int primary key,
     Department_id int unique,
     Dname varchar(10),
     Sname varchar(10),
@@ -81,27 +82,27 @@ create table Vendors(
     no_copies int, 
     address text,
     typeof enum('books','journals'),
-    ammount int);
+    ammount int
+);
     
 create table Fine(
-	Fine_id int(5) primary key,
-	Member_id varchar(10),
+    Fine_id int(5) primary key,
+    Member_id varchar(10),
     fine_amount int,
     fine_date date,
     fine_description text,
     fine_paid boolean,
     issue_id int(5),
     foreign key(issue_id) references Issue(issue_id),
-	foreign key(Member_id) references Members(Member_id)
-    
+    foreign key(Member_id) references Members(Member_id)
 );
 
 create table Issue(
-    issue_id int(5) primary key,
+        issue_id int(5) primary key,
 	Member_id varchar(10),
-    Book_id int,
+        Book_id int,
 	foreign key(Member_id) references Members(Member_id),
 	foreign key(Book_id) references Books(Book_id),
-    issue_date date,
-    retrun_date date
+        issue_date date,
+       retrun_date date
 );
