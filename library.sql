@@ -9,16 +9,7 @@ create table Login(
    exit_time time,
    Department_name varchar(30) 	
 );
-    
-create table Books(
-    Book_id int primary key,
-    Book_title varchar(30),
-    Book_author varchar(20),
-    Book_edition int,
-    subject_id int ,
-    foreign key(subject_id) references Department(subject_id)
-);
-    
+
 create table Department(
     subject_id int primary key,
     Sname varchar(20),
@@ -27,7 +18,39 @@ create table Department(
     total_books int ,
     shelf_no int 
 );
-    
+ create table Vendors(
+    vendor_id  char(5) primary key,
+    vender_name varchar(20),
+    email varchar(20),
+    phone_no int(10),
+    no_of_copies int, 
+    address text,
+    type enum('books','journals'),
+    amount float
+);   
+create table category(
+    category_id int primary key,
+    category_name varchar(20),
+    course varchar(20)
+    branch varchar(30),
+);
+create table Issue(
+        issue_id int(5) primary key,
+	Member_id varchar(10),
+        Book_id int,
+	foreign key(Member_id) references Members(Member_id),
+	foreign key(Book_id) references Books(Book_id),
+        issue_date date,
+        return_date date
+);
+create table Books(
+    Book_id int primary key,
+    Book_title varchar(30),
+    Book_author varchar(20),
+    Book_edition int,
+    subject_id int ,
+    foreign key(subject_id) references Department(subject_id)
+);
     
 create table Journals(
     journal_id int primary key,
@@ -48,7 +71,6 @@ create table EBooks(
     format text,
     foreign key(subject_id) references Department(subject_id)
 );
-    
 create table Members(
     Member_id varchar(10) primary key,
     Member_name varchar(20),
@@ -72,24 +94,6 @@ create table staff
     joining_data date
 );
 
-create table category(
-    category_id int primary key,
-    category_name varchar(20),
-    course varchar(20)
-    branch varchar(30),
-);
-
-create table Vendors(
-    vendor_id  char(5),
-    vender_name varchar(20),
-    email varchar(20),
-    phone_no int(10),
-    no_of_copies int, 
-    address text,
-    type enum('books','journals'),
-    amount float
-);
-    
 create table Fine(
     Fine_id int(5) primary key,
     Member_id varchar(10),
@@ -102,12 +106,4 @@ create table Fine(
     foreign key(Member_id) references Members(Member_id)
 );
 
-create table Issue(
-        issue_id int(5) primary key,
-	Member_id varchar(10),
-        Book_id int,
-	foreign key(Member_id) references Members(Member_id),
-	foreign key(Book_id) references Books(Book_id),
-        issue_date date,
-        return_date date
-);
+
