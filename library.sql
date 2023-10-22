@@ -34,6 +34,14 @@ create table category(
     course varchar(20)
     branch varchar(30),
 );
+create table Books(
+    Book_id int primary key,
+    Book_title varchar(30),
+    Book_author varchar(20),
+    Book_edition int,
+    subject_id int ,
+    foreign key(subject_id) references Department(subject_id)
+);
 create table Issue(
         issue_id int(5) primary key,
 	Member_id varchar(10),
@@ -43,15 +51,7 @@ create table Issue(
         issue_date date,
         return_date date
 );
-create table Books(
-    Book_id int primary key,
-    Book_title varchar(30),
-    Book_author varchar(20),
-    Book_edition int,
-    subject_id int ,
-    foreign key(subject_id) references Department(subject_id)
-);
-    
+
 create table Journals(
     journal_id int primary key,
     journal_title varchar(20),
