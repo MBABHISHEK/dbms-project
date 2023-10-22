@@ -42,6 +42,16 @@ create table Books(
     subject_id int ,
     foreign key(subject_id) references Department(subject_id)
 );
+create table Members(
+    Member_id varchar(10) primary key,
+    Member_name varchar(20),
+    category_id int,
+    email varchar(20),
+    phone_no int(10),
+    address text,
+    expiry_data date
+    foreign key(category_id) references category(category_id)
+);
 create table Issue(
         issue_id int(5) primary key,
 	Member_id varchar(10),
@@ -71,16 +81,7 @@ create table EBooks(
     format text,
     foreign key(subject_id) references Department(subject_id)
 );
-create table Members(
-    Member_id varchar(10) primary key,
-    Member_name varchar(20),
-    category_id int,
-    email varchar(20),
-    phone_no int(10),
-    address text,
-    expiry_data date
-    foreign key(category_id) references category(category_id)
-);
+
 
 create table staff
 (
