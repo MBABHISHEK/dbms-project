@@ -16,7 +16,7 @@ create table Books(
     Book_author varchar(20),
     Book_edition int,
     subject_id int ,
-    foreign key(subject_id) references Department(subject_id)
+    foreign key(subject_id) references Department(subject_id) 
 );
     
 create table Department(
@@ -69,7 +69,7 @@ create table staff
     email varchar(20),
     phone_no int(10),
     address text,
-    joining_data date
+    joining_year int
 );
 
 create table category(
@@ -84,7 +84,7 @@ create table Vendors(
     vender_name varchar(20),
     email varchar(20),
     phone_no int(10),
-    no_of_copies int, 
+    no_of_books int, 
     address text,
     type enum('books','journals'),
     amount float
@@ -109,5 +109,6 @@ create table Issue(
 	foreign key(Member_id) references Members(Member_id),
 	foreign key(Book_id) references Books(Book_id),
         issue_date date,
+	due_date date,
         return_date date
 );
