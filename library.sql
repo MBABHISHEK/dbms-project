@@ -2,7 +2,7 @@ create database LIBRARY_DATABASE;
 use LIBRARY_DATABASE;
 
 create table Login(
-   sl_no int primary key,
+   sl_no int primary key NOT NULL,
    name varchar(20),
    t_date date,
    entry_time time,
