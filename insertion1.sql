@@ -18,6 +18,9 @@ CREATE TABLE Books (
     categorised VARCHAR(5),
     FOREIGN KEY (categorised) REFERENCES Department(subject_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
+alter  table ebooks modify eBook_title text;
+
+
 CREATE TABLE EBooks (
     ebook_id INT PRIMARY KEY,
     eBook_title VARCHAR(20),
@@ -60,6 +63,7 @@ CREATE TABLE Issue (
     due_date DATE,
     return_date DATE
 );
+
 CREATE TABLE Members (
 	 Member_id VARCHAR(10) PRIMARY KEY,
      first_name VARCHAR(20),
@@ -70,9 +74,10 @@ CREATE TABLE Members (
      next_renewal DATE,
 	 login_id INT ,
      registeredby  VARCHAR(10),
-     FOREIGN KEY ( registeredby ) REFERENCES Staff(staff_id) ON DELETE CASCADE ON UPDATE CASCADE,
-     FOREIGN KEY (login_id) REFERENCES Login(login_id) ON DELETE CASCADE ON UPDATE CASCADE
+     FOREIGN KEY ( registeredby ) REFERENCES Staff(staff_id) ,
+     FOREIGN KEY (login_id) REFERENCES Login(login_id)
 );
+
 CREATE TABLE Fine (
     Fine_id INT PRIMARY KEY,
     Member_id VARCHAR(10),
@@ -84,13 +89,15 @@ CREATE TABLE Fine (
     FOREIGN KEY (issue_id) REFERENCES Issue(issue_id) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (Member_id) REFERENCES Members(Member_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
 create table Access
 (
     ebook_id INT ,
     Member_id VARCHAR(10),
     FOREIGN KEY (ebook_id) REFERENCES ebooks(ebook_id) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (Member_id) REFERENCES Members(Member_id) ON DELETE CASCADE ON UPDATE CASCADE
-);
+); 
+
 create table borrows
 (
 	issue_id INT ,
@@ -100,3 +107,5 @@ create table borrows
     FOREIGN KEY (issue_id) REFERENCES issue(issue_id) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (Member_id) REFERENCES Members(Member_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+
