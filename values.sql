@@ -20,7 +20,7 @@ VALUES
 
 describe department;
 
-INSERT INTO books (Book_id,Book_title,Book_author,Book_edition,catogorised)
+INSERT INTO books (Book_id,Book_title,Book_author,Book_edition,categorised)
 VALUES
     (1, 'FUNDAMENTALS OF DATABASE SYSTEMS', 'Navathe', 7, 'CS001'),
     (2, 'BASIC MECHANICAL ENGINEERING', 'JK GUPTA', 6, 'ME005'),
@@ -33,7 +33,7 @@ VALUES
     (9, 'ESTIMATING AND COSTING IN CIVIL ENGINEERING', 'B.N DUTTA', 4, 'CV231'),
     (10, 'INFORMATION TECHNOLOGY', 'SUMITA ARORA', 3, 'IS109'),
     (11, 'DESIGNING DATA-INTENSIVE APPLICATIONS', 'Martin Kleppmann', 6, 'IS222'),
-    (12, 'POLYMER SCIENCE AND TECHNOLOGY', 'Anshu Srivastav', 5, 'PS004', 'SA001'),
+    (12, 'POLYMER SCIENCE AND TECHNOLOGY', 'Anshu Srivastav', 5, 'PS004'),
     (13, 'POLYMERIZATION', 'Santosh K Gupta', 4, 'PS013'),
     (14, 'ELECTRONICS FUNDAMENTALS AND APPLICATIONS', 'D Chattopadhyay', 3, 'EC118'),
     (15, 'PRATICAL ELECTRONICS FOR INVENTORS', 'JB GUPTA', 6, 'EC222');
@@ -147,3 +147,20 @@ VALUES
     (502, 'STU003', 1002, '2023-10-18', 50.00, 'Book damage', 1),
     (503, 'STU004', 1003, '2023-10-19', 40.00, 'Return delay', 0),
     (504, 'STU005', 1004, '2023-10-19', 800.00, 'Book lost', 0);   
+    
+    
+    
+ INSERT INTO access values(
+ 1,'STU001'),
+  (5,'STU002'),
+  (7,'STU003'),
+  (3,'STU004'),
+   (11,'STU005'
+ );
+ 
+ insert into borrows values
+ (1000,'STU002',5),
+ (1005,'STU003',7),
+ (1002,'STU004',3),
+ (1004,'STU005',11
+ );
