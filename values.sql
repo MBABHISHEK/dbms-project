@@ -116,30 +116,17 @@ VALUES
     (1005,'2023-10-04', '2023-10-19', '2023-10-17'),
     (1006,'2023-10-04', '2023-10-19', '2023-10-19');
 
-describe members;
 INSERT INTO Members (Member_id, first_name, last_name, email, phone_no, address, next_renewal, login_id, registeredby)
 VALUES
-    ('STU001', 'ABHISHEK', 'KUMAR', 'mba@gmail.com', 8088868794, '#11 Nandini layout allnahalli Mysore 570002', '2025-01-21', 1, 'LIDLI002'),
-    ('STU002', 'ANAGHA', '', 'anagha@gmail.com', 1234567890, '#16,4th cross,Siddhartha layout,Mysuru', '2025-01-21', 2, 'LIDTE003'),
-    ('STU003', 'SINCHANA', '', 'sinchana@gmail.com', 2345678127, '#20,3rd cross,gangotri layout', '2025-01-22', 3, 'LIDTE003'),
-    ('STU004', 'KIRTANA', '', 'kirtana@gmail.com', 8893452134, '#21,4th cross,rajkamal apartment,Rajajinagar,Bangalore', '2025-01-22', 4, 'LIDLI002'),
-    ('STU005', 'VISMAYA', '', 'vismaya@gmail.com', 3412908765, '#20,5th cross,tk layout,rajajinagar,Mysuru', '2025-01-23', 5, 'LIDTE003'),
-    ('STU006', 'AKASH', '', 'akash@gmail.com', 1245716543, '#15,4th cross,Jayanagar,Bangalore', '2025-01-23', 6, 'LIDTE003'),
-    ('STU007', 'PREETI', '', 'preeti@gmail.com', 4432116785, '#12,5th cross,Saraswatipuram,Mysuru', '2025-02-24', 7, 'LIDTE003'),
-    ('STU008', 'VISHRUTH', '', 'vishruth@gmail.com', 2241786543, '#23,6th cross,Neharunagar,Bangalore', '2025-02-03', 8, 'LIDLI002'),
-    ('STU009', 'JAGRUTH', '', 'jagruth@gmail.com', 2234567172, '#21,2nd cross,sidharthanagar mysuru', '2025-02-13', 9, 'LIDTE003'),
-    ('STU010', 'VIVEK', '', 'vivek@gmail.com', 7865439087, '#56,7th cross,Hebbal,Mysuru', '2024-02-13', 10, 'LIDLI002');
+    ('STU001', 'Abhishek', 'MB', 'mba@gmail.com', 8088868794, '#11 Nandini layout allnahalli Mysore 570002', '2025-01-21', 2, 'LIDLI002'),
+    ('STU002', 'Anagha', 'KP', 'anagha@gmail.com', 1234567890, '#16,4th cross,Siddhartha layout,Mysuru', '2025-01-21', 4, 'LIDTE003'),
+    ('STU003', 'Sinchana', 'S', 'sinchana@gmail.com', 2345678127, '#20,3rd cross,gangotri layout', '2025-01-22', 3, 'LIDTE003'),
+    ('STU004', 'Kirtana', 'KIRAN', 'kirtana@gmail.com', 8893452134, '#21,4th cross,rajkamal apartment,Rajajinagar,Bangalore', '2025-01-22', 5, 'LIDLI002'),
+    ('STU005', 'Aniket', 'Shetty', 'aniket@gmail.com', 3412908765, '#20,5th cross,tk layout,rajajinagar,Mysuru', '2025-01-23', 1, 'LIDTE003'),
+    ('STU006', 'John', 'Samuel', 'akash@gmail.com', 1245716543, '#15,4th cross,Jayanagar,Bangalore', '2025-01-23', 6, 'LIDTE003'),
+    ('STU009', 'Jagruth', 'Kumar', 'jagruth@gmail.com', 2234567172, '#21,2nd cross,sidharthanagar mysuru', '2025-02-13', 7, 'LIDTE003'),
+    ('STU010', 'Vivek', 'Patel', 'vivek@gmail.com', 7865439087, '#56,7th cross,Hebbal,Mysuru', '2024-02-13',8 , 'LIDLI002');
 
-
-INSERT INTO members (member_id, first_name, last_name, email, phone_no, address, next_renewal, login_id, registered_by) 
-VALUES 
-('STU001', 'Aniket', 'Shetty', 'aniket@gmail.com', '9019865623', 'address', '2025-12-02', 1, 'LIBSL013'),
-('STU002', 'ANAGHA', NULL, 'anagha@gmail.com', '1234567890', '#16,4th cross,Siddhartha layout,Mysuru', '2025-01-21', 2, 'LIDTE003'),
-('STU003', 'SINCHANA', NULL, 'sinchana@gmail.com', '2345678127', '#20,3rd cross,gangotri layout', '2025-01-22', 3, 'LIDTE003'),
-('STU004', 'KIRTANA', NULL, 'kirtana@gmail.com', '8893452134', '#21,4th cross,rajkamal apartment,Rajajinagar,Bangalore', '2025-01-22', 4, 'LIDLI002'),
-('STU005', 'Abhishek', 'M B', 'aniket@gmail.com', '9019865623', 'mysore', '2025-12-02', 5, 'LIBSL013');
-
-    
 INSERT INTO Fine (Fine_id, Member_id, issue_id, fine_date, fine_amount, fine_description, fine_paid)
 VALUES
     (500, 'STU001', 1000, '2023-10-17', 40.00, 'Return delay', 1),
@@ -148,9 +135,7 @@ VALUES
     (503, 'STU004', 1003, '2023-10-19', 40.00, 'Return delay', 0),
     (504, 'STU005', 1004, '2023-10-19', 800.00, 'Book lost', 0);   
     
-    
-    
- INSERT INTO access values(
+INSERT INTO access values(
  1,'STU001'),
   (5,'STU002'),
   (7,'STU003'),
