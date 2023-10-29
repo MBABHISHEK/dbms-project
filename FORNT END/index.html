@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Database Content</title>
+</head>
+<body>
+
+<h2>Database Content</h2>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+    </tr>
+
+    <?php
+    // Assuming you have a MySQL database
+    $servername = "localhost";
+    $username = "username";
+    $password = "password";
+    $dbname = "database_name";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT id, name, email FROM your_table_name";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while ($row = $result->fetch_assoc()) {
+            echo "<tr><td>" . $row["id"] . "</td><td>" . $row["name"] . "</td><td>" . $row["email"] . "</td></tr>";
+        }
+    } else {
+        echo "0 results";
+    }
+    $conn->close();
+    ?>
+</table>
+
+</body>
+</html>
