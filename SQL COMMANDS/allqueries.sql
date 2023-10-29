@@ -133,7 +133,3 @@ SELECT Book_title,Book_author
 FROM books
 WHERE Book_id NOT IN(
 SELECT Book_id FROM borrows);
-
-
-
-
