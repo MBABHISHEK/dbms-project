@@ -6,3 +6,4 @@ FROM members
 WHERE EXISTS (SELECT * FROM borrows where borrows.member_id= members.member_id)
 AND 
 EXISTS (SELECT * FROM fine where Fine.member_id= members.member_id);
+
