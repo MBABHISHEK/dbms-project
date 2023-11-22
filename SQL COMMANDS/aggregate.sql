@@ -15,3 +15,10 @@ WHERE ratings_value = (SELECT MAX(ratings_value) FROM Ebooks);
 SELECT Fine_id,issue_id,Member_id FROM fine 
 where fine_amount<(
 select avg(fine_amount) from fine);
+
+
+
+SELECT member_id,COUNT(*) AS no_of_books_taken
+FROM borrows
+GROUP BY member_id
+ORDER BY no_of_books_taken;
