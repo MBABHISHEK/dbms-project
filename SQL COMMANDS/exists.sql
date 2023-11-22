@@ -6,3 +6,7 @@ FROM members
 WHERE EXISTS (SELECT * FROM borrows where borrows.member_id= members.member_id)
 AND 
 EXISTS (SELECT * FROM fine where Fine.member_id= members.member_id);
+
+SELECT Member_id,first_name as name
+FROM Members 
+WHERE NOT EXISTS(SELECT *FROM Borrows WHERE Members.Member_id = Borrows.Member_id);
