@@ -1,42 +1,70 @@
-.add-book-container {
+/* Apply styles to the body element for a full-page background image */
+body {
+    margin: 0;
+    padding: 0;
+    background: url('D:\dbms-project\library-app\public\images\Magic Book  Logo.png') center/cover no-repeat fixed;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100vh; /* Make sure the body takes the full height of the viewport */
   }
   
-  .add-book-box {
-    max-width: 400px;
-  
+  /* Styles for the form container */
+  .add-book-form-container {
+    width: 400px;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #3498db;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.2);
+    background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background to the form container */
+    color: #000; /* Adjust text color for better visibility on the form container background */
   }
   
   .add-book-form {
     display: flex;
-    flex-direction: column;
-  }
+  flex-direction: column;
+  align-items: center; /* Center the form horizontally within the container */
+  width: 100%; /* Set the form width to 100% of the container */
+  max-width: 300px; /* Set a maximum width for the form content */
+  margin: auto; /* Center the form both horizontally and vertically */
+}
   
+  /* Styles for labels */
   label {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    color: #3498db;
   }
   
+  /* Styles for input fields */
   input {
-    padding: 8px;
-    margin-bottom: 16px;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+  
+    /* Center the content horizontally and vertically */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
+  
+  /* Styles for the submit button */
   button {
-    background-color: #007bff;
+    width: 100%; /* Make the button fill the entire width of the form content */
+    background-color: #3498db;
     color: #fff;
-    padding: 10px;
+    padding: 12px;
     cursor: pointer;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
   }
   
   button:hover {
-    background-color: #0056b3;
+    background-color: #2980b9;
   }
